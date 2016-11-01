@@ -1,6 +1,6 @@
 <h2>Hello, <%= @current_user.name %></h2>
 <a href="/users/<%= @current_user.id %>/edit">Edit Profile</a><br>
-
+<a href="/secrets">Secrets</a>
 <form action="/secrets" method="post">
     <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
     <textarea name="secret" rows="8" cols="40"></textarea><br>

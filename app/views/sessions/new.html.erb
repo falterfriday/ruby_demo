@@ -1,8 +1,20 @@
-<%= form_tag '/sessions/create' do %>
-    <p>Email: <%= text_field_tag :email %></p>
-    <p>Password: <%= password_field_tag :password %></p>
-    <%= submit_tag :Submit %>
-<% end %>
-<% if flash[:errors] %>
-    <p> <%= flash[:errors] %></p>
-<% end %>
+<center>
+    <h1>Log In</h1>
+    <%= form_tag '/sessions/create' do %>
+        Email: <%= text_field_tag :email %><br>
+        Password: <%= password_field_tag :password %><br>
+        <%= submit_tag :Submit %>
+    <% end %>
+    <% if flash[:errors] %>
+        <p class="errors"> <%= flash[:errors] %></p>
+    <% end %>
+</center>
+<style media="screen">
+    form {
+        display: inline-block;
+        text-align: right;
+    }
+    .errors {
+        color: red;
+    }
+</style>
