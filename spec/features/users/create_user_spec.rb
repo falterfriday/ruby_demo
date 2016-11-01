@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'creating a user' do
   before do
-    visit 'users/new'
+    visit '/'
   end
   it 'creates new user and redirects to profile page with proper credentials' do
     fill_in 'email', with: 'kobe2@lakers.com'
@@ -14,7 +14,7 @@ RSpec.describe 'creating a user' do
   end
   it 'shows validation errors without proper credentials' do
     click_button 'Submit'
-    expect(current_path).to eq('/users/new')
+    expect(current_path).to eq('/')
     expect(page).to have_text("can't be blank")
     expect(page).to have_text("invalid")
   end
