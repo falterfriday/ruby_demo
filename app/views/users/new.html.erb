@@ -1,0 +1,32 @@
+<center>
+
+<h1>Secrets</h1>
+<%= form_tag '/users/create' do %>
+    Name: <%= text_field_tag :name %> <br>
+    Email: <%= text_field_tag :email %> <br>
+    Password: <%= password_field_tag :password %> <br>
+    Password Confirmation: <%= password_field_tag :password_confirmation %> <br>
+    <%= submit_tag "Submit" %>
+<% end %>
+<br>
+<a href="/sessions/new">Log In</a>
+<% if flash[:errors] %>
+    <ul>
+        <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+    </ul>
+<% end %>
+</center>
+<style media="screen">
+    form {
+        display: inline-block;
+        text-align: right;
+    }
+    ul {
+        list-style-type: none;
+    }
+    li {
+        color: red;
+    }
+</style>

@@ -1,0 +1,16 @@
+<h1>Update Profile</h1>
+
+<form action="/users/<%= @current_user.id %>" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    Name:
+    <input type="text" name="name" value="<%= @current_user.name %>"><br>
+    Email:
+    <input type="text" name="email" value="<%= @current_user.email %>"><br>
+    <input type="submit" name="Update" value="Update">
+</form>
+
+<form action="/users/<%= @current_user.id %>" method="post">
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <input type='hidden' name='_method' value='delete'>
+    <input type='submit' name="Delete Account" value='Delete Account'>
+</form>
